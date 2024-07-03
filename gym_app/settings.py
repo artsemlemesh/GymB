@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os.path
 from pathlib import Path
 from decouple import config
-import dj_database_url
 
 from dotenv import load_dotenv
 
@@ -82,10 +81,7 @@ STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 CSRF_COOKIE_HTTPONLY = False 
 CORS_ALLOW_ALL_ORIGINS = True
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:5174",
-#     "http://127.0.0.1:8000",
-# ]
+
 CORS_ALLOW_CREDENTIALS = True
 
 
@@ -108,46 +104,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "gym_app.wsgi.application"
-
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-
-
-# DATABASES = {
-#     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-# }
-
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.getenv('DB_NAME', 'your_default_db_name'),
-#         'USER': os.getenv('DB_USER', 'your_default_db_user'),
-#         'PASSWORD': os.getenv('DB_PASSWORD', 'your_default_db_password'),
-#         'HOST': os.getenv('DB_HOST', 'localhost'),
-#         'PORT': os.getenv('DB_PORT', '5432'),
-#     }
-# }
-
-
-
-
-
-
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": 'mydatabase',
-#         'USER': 'myuser',
-#         'PASSWORD': 'mypassword',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-
 
 
 
